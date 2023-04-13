@@ -70,10 +70,10 @@ const Modal: React.FC<ModalProps> = ({
     return (
         <>
             <div
+            // flex
                 className='
                     justify-center
                     items-center
-                    flex
                     overflow-x-hidden
                     overflow-y-auto
                     fixed
