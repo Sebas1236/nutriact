@@ -21,6 +21,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
     const loginModal = useLoginModal();
 
     const [isOpen, setIsOpen] = useState(false);
+    
     const toggleOpen = useCallback(() =>
         setIsOpen(!isOpen),
         [isOpen]);
@@ -43,7 +44,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                         cursor-pointer
                     '
                 >
-                    NutriAct - Aaa
+                    NutriAct -
                 </div>
                 <div
                     onClick={toggleOpen}
@@ -65,7 +66,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 >
                     <AiOutlineMenu />
                     <div className='hidden md:block'>
-                        <Avatar src={currentUser?.image}/>
+                        <Avatar src={currentUser?.image} />
                     </div>
                 </div>
             </div>
@@ -78,6 +79,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
                             <>
                                 <MenuItem
                                     onClick={() => { }}
+                                    label='Mi perfil'
+                                />
+                                <MenuItem
+                                    onClick={() => { }}
                                     label='Mis rutinas'
                                 />
                                 <MenuItem
@@ -86,7 +91,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                                 />
                                 <hr />
                                 <MenuItem
-                                    onClick={()=>signOut()}
+                                    onClick={() => signOut()}
                                     label='Logout'
                                 />
                             </>

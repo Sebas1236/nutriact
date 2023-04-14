@@ -70,7 +70,7 @@ const Modal: React.FC<ModalProps> = ({
     return (
         <>
             <div
-            // flex
+                // flex
                 className='
                     justify-center
                     items-center
@@ -98,12 +98,11 @@ const Modal: React.FC<ModalProps> = ({
                         md:h-auto
                     '
                 >
-                    {/* CONTENT */}
+                    {/* CONTENT  h-full*/}
                     <div
                         className={`
                             translate
                             duration-300
-                            h-full
                             ${showModal ? 'translate-y-0' : 'translate-y-full'}
                             ${showModal ? 'opacity-100' : 'opacity-0'}
                         `}

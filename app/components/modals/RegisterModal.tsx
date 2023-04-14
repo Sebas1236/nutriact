@@ -50,7 +50,7 @@ const RegisterModal = () => {
             });
     }
 
-    const toggleModal = useCallback(() => {
+    const toggle = useCallback(() => {
         registerModal.onClose();
         loginModal.onOpen();
     }, [registerModal, loginModal]);
@@ -118,7 +118,7 @@ const RegisterModal = () => {
                         ¿Ya tienes una cuenta?
                     </div>
                     <div
-                        onClick={toggleModal}
+                        onClick={toggle}
                         className='text-neutral-800 cursor-pointer hover:underline'>
                         Iniciar Sesión
                     </div>

@@ -25,4 +25,4 @@ const MenuItem: React.FC<MenuItemProps> = ({
   )
 }
 
-export default MenuItem
+export default MenuItem;
