@@ -36,6 +36,11 @@ export const categories = [
         icon: GiAbdominalArmor,
         description: 'Ejercicios para el pecho'
     },
+    {
+        label: 'Cardio',
+        icon: GiAbdominalArmor,
+        description: 'Ejercicios para el pecho'
+    },
 ]
 
 const Categories = () => {
