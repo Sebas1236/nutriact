@@ -12,8 +12,8 @@ const getExerciseTargets = async () => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '837290a091mshec0fdc4c67c5bb8p1929dcjsn268d3df28e2e',
-      'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+      'X-RapidAPI-Key': process.env.RAPID_API_KEY as string,
+      'X-RapidAPI-Host': process.env.RAPID_API_HOST as string,
     }
   };
 
