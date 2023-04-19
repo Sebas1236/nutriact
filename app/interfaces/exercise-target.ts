@@ -5,4 +5,4 @@ export interface ExerciseTarget {
     id: "string";
     name: "string";
     target: "string";
-}
+};

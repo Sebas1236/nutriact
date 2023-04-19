@@ -1,7 +1,16 @@
 import axios from "axios";
 
-const exerciseRoute = axios.create({
-    baseURL: "https://exercisedb.p.rapidapi.com/exercises"
-});
+const options = {
+  method: 'GET',
+  url: 'https://exercisedb.p.rapidapi.com/exercises',
+  headers: {
+    'X-RapidAPI-Key': '837290a091mshec0fdc4c67c5bb8p1929dcjsn268d3df28e2e',
+    'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+  }
+};
 
-export default exerciseRoute;
+axios.request(options).then(function (response: any) {
+	return response.data;
+}).catch(function (error: any) {
+	console.error(error);
+});
