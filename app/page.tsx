@@ -31,7 +31,6 @@ const getExerciseTargets = async () => {
 
 export default async function Home() {
   const exerciseTargets = await getExerciseTargets();
-  console.log(exerciseTargets);
   // const listings = await getListings();
   const currentUser = await getCurrentUser();
 
