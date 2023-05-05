@@ -1,5 +1,4 @@
-import React from "react";
-
+"use client";
 // import data
 import { nav } from "../utils/data";
 
