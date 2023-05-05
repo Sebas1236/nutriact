@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
-import { Testimonial } from "../types/community";
+import { Testimonial } from "../types/data";
 
 interface Props {
   testimonials: Testimonial[];
