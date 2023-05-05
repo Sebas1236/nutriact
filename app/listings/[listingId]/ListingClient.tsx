@@ -2,6 +2,7 @@
 
 import Container from "@/app/components/Container";
 import ListingHead from "@/app/components/listings/ListingHead";
+import ListingInfo from "@/app/components/listings/ListingInfo";
 import { categories } from "@/app/components/navbar/Categories";
 import { ExerciseTarget } from "@/app/interfaces";
 import { SafeUser } from "@/app/types";
@@ -29,6 +30,23 @@ const ListingClient: React.FC<ListingClientProps> = ({
             id={listing.id}
             currentUser={currentUser}
           />
+          <div
+            className="
+            grid
+            grid-cols-1
+            md:grid-cols-7
+            md:gap-10
+            mt-6
+          "
+          >
+            <ListingInfo
+              name={listing.name}
+              category={category}
+              target={listing.target}
+              equipment={listing.equipment}
+              bodyPart={listing.bodyPart}
+            />
+          </div>
         </div>
       </div>
     </Container>

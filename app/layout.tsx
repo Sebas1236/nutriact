@@ -1,27 +1,26 @@
-import ClientOnly from './components/ClientOnly'
-import RegisterModal from './components/modals/RegisterModal'
-import Navbar from './components/navbar/Navbar'
-import './globals.css'
-import { Nunito } from 'next/font/google'
-import ToasterProvider from './providers/ToasterProvider'
-import LoginModal from './components/modals/LoginModal'
-import getCurrentUser from './actions/getCurrentUser'
+import ClientOnly from "./components/ClientOnly";
+import RegisterModal from "./components/modals/RegisterModal";
+import Navbar from "./components/navbar/Navbar";
+import "./globals.css";
+import { Nunito } from "next/font/google";
+import ToasterProvider from "./providers/ToasterProvider";
+import LoginModal from "./components/modals/LoginModal";
+import getCurrentUser from "./actions/getCurrentUser";
 
 export const metadata = {
-  title: 'NutriAct',
-  description: 'NutriAct Web App',
-}
+  title: "NutriAct",
+  description: "NutriAct Web App",
+};
 
 const font = Nunito({
-  subsets: ['latin'],
-})
+  subsets: ["latin"],
+});
 
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-
   const currentUser = await getCurrentUser();
 
   return (
@@ -31,12 +30,11 @@ export default async function RootLayout({
           <ToasterProvider />
           <LoginModal />
           <RegisterModal />
-          <Navbar currentUser={currentUser} />
+          {/* <Navbar currentUser={currentUser} /> */}
         </ClientOnly>
-        <div className="pb-20 pt-28">
-          {children}
-        </div>
+        {/* pb-20 pt-28 */}
+        <div>{children}</div>
       </body>
     </html>
-  )
+  );
 }

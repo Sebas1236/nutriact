@@ -1,4 +1,3 @@
-
 import { GetStaticProps, NextPage } from "next";
 import getCurrentUser from "./actions/getCurrentUser";
 import getListings from "./actions/getListings";
@@ -6,39 +5,60 @@ import ClientOnly from "./components/ClientOnly";
 import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
 import ListingCard from "./components/listings/ListingCard";
-import { ExerciseTarget } from './interfaces/exercise-target';
+import { ExerciseTarget } from "./interfaces/exercise-target";
+import Aos from "aos";
+import Banner from "./components/Banner";
+import Header from "./components/Header";
+import About from "./components/About";
+import Workouts from "./components/Workout";
+import Pricing from "./components/Pricing";
+import Community from "./components/Community";
+import Faq from "./components/Faq";
+import Join from "./components/Join";
+import Footer from "./components/Footer";
 
 const getExerciseTargets = async () => {
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'X-RapidAPI-Key': process.env.RAPID_API_KEY as string,
-      'X-RapidAPI-Host': process.env.RAPID_API_HOST as string,
-    }
+      "X-RapidAPI-Key": process.env.RAPID_API_KEY as string,
+      "X-RapidAPI-Host": process.env.RAPID_API_HOST as string,
+    },
   };
 
-  const response = await fetch('https://exercisedb.p.rapidapi.com/exercises', options);
+  const response = await fetch(
+    "https://exercisedb.p.rapidapi.com/exercises",
+    options
+  );
 
-  if(!response.ok) {
+  if (!response.ok) {
     throw new Error(response.statusText);
   }
-  
+
   const exerciseTargets: ExerciseTarget[] = await response.json();
 
   return exerciseTargets;
-
-}
+};
 
 export default async function Home() {
-  const exerciseTargets = await getExerciseTargets();
+  // const exerciseTargets = await getExerciseTargets();
   // const listings = await getListings();
-  const currentUser = await getCurrentUser();
+  // const currentUser = await getCurrentUser();
 
   return (
     <ClientOnly>
-      <Container>
-        <div className="pt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
-          {
+      {/* <Container> */}
+      <Header />
+      <Banner />
+      <About />
+      <Workouts />
+      <Pricing />
+      <Community />
+      <Faq />
+      <Join />
+      <Footer />
+      {/* <div className="pt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8"> */}
+      {/* {
             exerciseTargets.map((listing) => {
               return (
                 <ListingCard
@@ -48,9 +68,9 @@ export default async function Home() {
                 />
               )
             })
-          }
-        </div>
-      </Container>
+          } */}
+      {/* </div> */}
+      {/* </Container> */}
     </ClientOnly>
   );
-};
+}
