@@ -5,13 +5,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
+import { Testimonial } from "../types/community";
 
-const CommunitySlider = ({ testimonials }) => {
+interface Props {
+  testimonials: Testimonial[];
+}
+
+const CommunitySlider: React.FC<Props> = ({ testimonials }) => {
   return (
     <Swiper
       slidesPerView={3}
       spaceBetween={32}
-      centeredSlides={"true"}
+      // centeredSlides={"true"}
       grabCursor={true}
       modules={[]}
       className="communitySlider"

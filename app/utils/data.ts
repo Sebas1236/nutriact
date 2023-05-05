@@ -18,6 +18,7 @@ import CalendarIcn from "../../public/images/workouts/icons/calendar.svg";
 import PriceIcn from "../../public/images/pricing/icons/price.svg";
 import CommunityIcn from "../../public/images/community/icons/community-icn.svg";
 import QuestionMarkIcn from "../../public/images/faq/icons/question-mark.svg";
+import { Community, Testimonial } from "../types/community";
 
 export const header = {
   logo: Logo,
@@ -128,7 +129,7 @@ export const pricing = {
   ],
 };
 
-export const community = {
+export const community: Community = {
   icon: CommunityIcn,
   title: "Comunidad",
   testimonials: [
