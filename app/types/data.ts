@@ -48,10 +48,14 @@ export type workouts = {
   programs: program[];
 };
 
+export type list = {
+  name: string;
+};
+
 export type plan = {
   name: string;
   price: string;
-  list: [{ name: string }];
+  list: list[];
   delay: number;
 };
 

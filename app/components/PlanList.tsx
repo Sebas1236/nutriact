@@ -3,8 +3,13 @@ import { useState } from "react";
 
 // import icons
 import { BsCheckCircleFill } from "react-icons/bs";
+import { plan } from "../types/data";
 
-const PlanList = ({ plans }: any) => {
+interface Props {
+  plans: plan[];
+}
+
+const PlanList: React.FC<Props> = ({ plans }) => {
   const [index, setIndex] = useState(0);
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center max-w-[1280px] mx-auto gap-y-4">
