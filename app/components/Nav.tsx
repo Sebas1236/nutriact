@@ -38,7 +38,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="hidden lg:flex dark:bg-black">
+    <nav className="hidden lg:flex">
       <ul className="flex gap-x-8 text-white">
         {nav.map((item, idx) => {
           return (

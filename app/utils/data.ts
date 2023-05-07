@@ -22,8 +22,8 @@ import { Community, Testimonial } from "../types/data";
 
 export const header = {
   logo: Logo,
-  btnLoginText: "Iniciar Sesión",
-  btnSignupText: "Registrarse",
+  btnLoginText: "Log In",
+  btnSignupText: "Sign Up",
 };
 
 export const nav = [

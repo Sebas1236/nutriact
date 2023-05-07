@@ -43,12 +43,12 @@ const getExerciseTargets = async () => {
 export default async function Home() {
   // const exerciseTargets = await getExerciseTargets();
   // const listings = await getListings();
-  // const currentUser = await getCurrentUser();
+  const currentUser = await getCurrentUser();
 
   return (
     <ClientOnly>
       {/* <Container> */}
-      <Header />
+      <Header currentUser={currentUser} />
       <Banner />
       <About />
       <Workouts />
