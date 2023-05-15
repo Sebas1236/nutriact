@@ -6,6 +6,7 @@ import { Nunito } from "next/font/google";
 import ToasterProvider from "./providers/ToasterProvider";
 import LoginModal from "./components/modals/LoginModal";
 import getCurrentUser from "./actions/getCurrentUser";
+import AuthContext from "./context/AuthContext";
 
 export const metadata = {
   title: "NutriAct",
@@ -26,14 +27,16 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${font.className} dark`}>
-        <ClientOnly>
-          <ToasterProvider />
-          <LoginModal />
-          <RegisterModal />
-          {/* <Navbar currentUser={currentUser} /> */}
-        </ClientOnly>
-        {/* pb-20 pt-28 */}
-        <div>{children}</div>
+        <AuthContext>
+          <ClientOnly>
+            <ToasterProvider />
+            <LoginModal />
+            <RegisterModal />
+            {/* <Navbar currentUser={currentUser} /> */}
+          </ClientOnly>
+          {/* pb-20 pt-28 */}
+          <div>{children}</div>
+        </AuthContext>
       </body>
     </html>
   );

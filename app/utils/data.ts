@@ -37,7 +37,7 @@ export const nav = [
 
 export const banner = {
   titlePart1: "Mejora cada día",
-  titlePart2: "– NutriAct - avanza y aprende.",
+  titlePart2: "– avanza y aprende.",
   subtitle:
     "Proveemos un área fit, divertida y amigable, en un espacio seguro.",
   textBtn: "Únete ahora",

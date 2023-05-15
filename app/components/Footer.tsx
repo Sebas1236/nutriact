@@ -16,7 +16,8 @@ const Footer = () => {
       >
         {/* logo */}
         <Link href="#">
-          <Image className="" src={logo} alt="" />
+          {/* <Image className="" src={logo} alt="" /> */}
+          NutriAct
         </Link>
         {/* copyright text */}
         <p className="text-neutral-300 text-sm">{copyrightText}</p>
