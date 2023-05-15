@@ -36,10 +36,10 @@ export const nav = [
 ];
 
 export const banner = {
-  titlePart1: "Get the best part of your day",
-  titlePart2: "– you fit here.",
+  titlePart1: "Mejora cada día",
+  titlePart2: "– NutriAct - avanza y aprende.",
   subtitle:
-    "We provide serious fitness but within a fun and friendly, safe space.",
+    "Proveemos un área fit, divertida y amigable, en un espacio seguro.",
   textBtn: "Únete ahora",
   img: "",
 };
@@ -48,10 +48,10 @@ export const about = {
   icon: UsersIcn,
   title: "Nuestra misión",
   subtitle1:
-    "We are distinguished by our unsurpassed motivating atmosphere, knowledgeable staff, and premier exercise equipment, which supports our members in meeting their individual fitness goals.",
+    "Buscamos llegar a más personas interesadas en mejorar su salud, así como su condición física, mental y emocional.",
   subtitle2:
-    "The strength of our heart-felt identity is utilized to inspire every person that steps foot into our gyms to better themselves.",
-  link: "Join Now",
+    "Nuestro objetivo es brindar un servicio de calidad, con un ambiente amigable y seguro, para que nuestros clientes se sientan cómodos y motivados a seguir adelante. Así como una herramienta para facilitar el progreso de nuestros clientes.",
+  link: "Únete ahora",
 };
 
 export const workouts = {
@@ -136,26 +136,25 @@ export const community: Community = {
     {
       image: CommunityImg1,
       name: "Mark A.",
-      message:
-        "“Great location, great price and great, helpful people. What to want more?”",
+      message: "“Fácil de usar, intuitivo y muy útil. Totalmente reocmendado.”",
     },
     {
       image: CommunityImg2,
       name: "Lauren K.",
       message:
-        "“Gymme changed my life. Not only physically but mentally as well. I’m a better mother, and all around better human being because of this gym.”",
+        "“NutriAct cambió mi vida. No sólo físicamente, también mentalmente. Soy una persona nueva.”",
     },
     {
       image: CommunityImg3,
       name: "Jhon D.",
       message:
-        "“Love these workouts! Trainers are knowledgeable and motivating. Gymme is wonderful!”",
+        "“Amo estos entrenamientos! Son completos y motivadores. NutriAct es asombroso!”",
     },
     {
       image: CommunityImg4,
       name: "Anne R.",
       message:
-        "“Love these workouts! Trainers are knowledgeable and motivating. Gymme is wonderful!”",
+        "“NutriAct es la app más novedosa e innovadora en cuánto a entrenamientos y nutrición. Me encanta!”",
     },
   ],
 };
@@ -165,44 +164,42 @@ export const faq = {
   title: "FAQ",
   accordions: [
     {
-      question: "How can I book a workout class?",
+      question: "¿Por qué NutriAct?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime.",
+        "NutriAct presenta una solución novedosa, fácil de seguir y que se adapta a tus necesidades. Nuestro objetivo es ayudarte a mejorar tu salud y condición física, así como tu condición mental y emocional.",
     },
     {
-      question: "Can I pay by cash for my membership?",
+      question: "¿Cómo funciona NutriAct?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime.",
+        "NutriAct es una plataforma que te permite acceder a rutinas de entrenamiento y planes de alimentación personalizados, así como a un nutriólogo certificado que te ayudará a alcanzar tus objetivos. De la misma manera, NutriAct te permite mejorar tu postura mediante el uso de Machine Learning.",
     },
     {
-      question: "What age do I need to be to join?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime.",
+      question: "¿Qué requisitos debo cumplir?",
+      answer: "Ninguno, NutriAct está diseñado por y para todos.",
     },
     {
-      question: "Are there any lockers?",
+      question: "¿Cómo funcionan las rutinas?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime.",
+        "Las rutinas son diseñadas por un nutriólogo certificado, y se adaptan a tus necesidades y objetivos. Además, puedes acceder a rutinas de entrenamiento de otros usuarios, así como a rutinas de entrenamiento generales.",
     },
     {
-      question: "How do I cancel my membership?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime.",
+      question: "¿Existe una app móvil?",
+      answer: "Por el momento no, pero planeamos lanzarla pronto.",
     },
     {
-      question: "Is there water available at the gym?",
+      question: "¿Cómo contacto con mi nutriólogo?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime.",
+        "Puedes contactar con tu nutriólogo mediante la plataforma, o mediante correo electrónico.",
     },
   ],
 };
 
 export const join = {
   image: JoinImg,
-  title: "Wanna join & have fun?",
+  title: "¿Quieres unirte y empezar tu cambio?",
   subtitle:
-    "We’ll keep you updated on the things you need to know about Gymme. Nothing more, nothing less.",
-  btnText: "Join now",
+    "Únete a nuestra comunidad y empieza a mejorar tu salud y condición física, así como tu condición mental y emocional.",
+  btnText: "Únete ahora",
 };
 
 export const footer = {

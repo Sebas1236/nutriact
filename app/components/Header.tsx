@@ -42,7 +42,8 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
     >
       {/* logo */}
       <a href="/">
-        <Image className="h-[30px]" src={logo} alt="" />
+        {/* <Image className="h-[30px]" src={logo} alt="" /> */}
+        NutriAct
       </a>
 
       {/* nav - initially hidden - show in desktop mode */}
