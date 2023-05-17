@@ -1,17 +1,24 @@
-import { Listing, User } from "@prisma/client";
+import { Listing, User, Conversation, Message } from "@prisma/client";
 
-export type SafeListing = Omit<
-    Listing,
-    "createdAt"
-> & {
-    createdAt: string;
-}
+export type SafeListing = Omit<Listing, "createdAt"> & {
+  createdAt: string;
+};
 
 export type SafeUser = Omit<
-    User,
-    "createdAt" | "updatedAt" | "emailVerified" 
+  User,
+  "createdAt" | "updatedAt" | "emailVerified"
 > & {
-    createdAt: string;
-    updatedAt: string;
-    emailVerified: string | null;
+  createdAt: string;
+  updatedAt: string;
+  emailVerified: string | null;
+};
+
+export type FullMessageType = Message & {
+  sender: User;
+  seen: User[];
+};
+
+export type FullConversationType = Conversation & {
+  users: User[];
+  messages: FullMessageType[];
 };
