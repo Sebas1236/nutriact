@@ -3,8 +3,13 @@
 import useRoutes from "@/app/hooks/useRoutes";
 import { useState } from "react";
 import DesktopItem from "./DesktopItem";
+import { SafeUser } from "@/app/types";
 
-const DesktopSidebar = () => {
+interface DesktopSidebarProps {
+  currentUser: SafeUser | null;
+}
+
+const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
   const routes = useRoutes();
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -37,6 +42,26 @@ const DesktopSidebar = () => {
             />
           ))}
         </ul>
+      </nav>
+      <nav
+        className="
+            mt-4
+            flex
+            flex-col
+            items-center
+            justify-between
+      "
+      >
+        <div
+          onClick={() => setIsOpen(!isOpen)}
+          className="
+            cursor-pointer
+            hover:opacity-75
+            transition
+          "
+        >
+          <Avatar user={currentUser} />
+        </div>
       </nav>
     </div>
   );
