@@ -4,6 +4,7 @@ import useRoutes from "@/app/hooks/useRoutes";
 import { useState } from "react";
 import DesktopItem from "./DesktopItem";
 import { SafeUser } from "@/app/types";
+import Avatar from "./Avatar";
 
 interface DesktopSidebarProps {
   currentUser: SafeUser | null;

@@ -1,10 +1,11 @@
 "use client";
 
 import { SafeUser } from "@/app/types";
+import { User } from "@prisma/client";
 import Image from "next/image";
 
 interface AvatarProps {
-  user?: SafeUser | null;
+  user?: SafeUser | null | User;
 }
 
 const Avatar: React.FC<AvatarProps> = ({ user }) => {

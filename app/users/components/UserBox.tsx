@@ -2,12 +2,13 @@
 
 import Avatar from "@/app/components/sidebar/Avatar";
 import { SafeUser } from "@/app/types";
+import { User } from "@prisma/client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 
 interface UserBoxProps {
-  data: SafeUser | null;
+  data: SafeUser | null | User;
 }
 
 const UserBox: React.FC<UserBoxProps> = ({ data }) => {
