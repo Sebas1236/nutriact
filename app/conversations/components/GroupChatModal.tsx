@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import Button from "../[conversationId]/components/Button";
 
 interface GroupChatModalProps {
   isOpen: boolean;
@@ -112,6 +113,27 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
               />
             </div>
           </div>
+        </div>
+        <div
+          className="
+            mt-6
+            flex
+            items-center
+            justify-end
+            gap-x-6
+          "
+        >
+          <Button
+            type="button"
+            secondary
+            onClick={onClose}
+            disabled={isLoading}
+          >
+            Cancelar
+          </Button>
+          <Button disabled={isLoading} type="submit">
+            Crear
+          </Button>
         </div>
       </form>
     </Modal>
