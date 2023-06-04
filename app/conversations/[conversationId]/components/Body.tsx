@@ -5,6 +5,8 @@ import { FullMessageType } from "@/app/types";
 import { useState, useRef, useEffect } from "react";
 import MessageBox from "./MessageBox";
 import axios from "axios";
+import { pusherClient } from "@/app/libs/pusher";
+import { find, set } from "lodash";
 
 interface BodyProps {
   initialMessages: FullMessageType[];
@@ -19,6 +21,32 @@ const Body: React.FC<BodyProps> = ({ initialMessages }) => {
 
   useEffect(() => {
     axios.post(`/api/conversations/${conversationId}/seen`);
+  }, [conversationId]);
+
+  useEffect(() => {
+    pusherClient.subscribe(conversationId);
+    bottomRef?.current?.scrollIntoView({ behavior: "smooth" });
+
+    const messageHandler = (message: FullMessageType) => {
+      //when we receive a new message we mark the conversation as seen
+      axios.post(`/api/conversations/${conversationId}/seen`);
+      setMessages((current) => {
+        //if there's any message with the same id, update it
+        if (find(current, { id: message.id })) return current;
+        return [...current, message];
+      });
+
+      bottomRef?.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+    //bind the pusher client to expect messages:new
+    pusherClient.bind("messages:new", messageHandler);
+
+    //unmound method for pusher client
+    return () => {
+      pusherClient.unsubscribe(conversationId);
+      pusherClient.unbind("messages:new", messageHandler);
+    };
   }, [conversationId]);
 
   return (
