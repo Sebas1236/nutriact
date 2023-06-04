@@ -11,11 +11,12 @@ import Input from "../inputs/Input";
 import Image from "next/image";
 import { CldUploadButton } from "next-cloudinary";
 import Button from "@/app/conversations/[conversationId]/components/Button";
+import { SafeUser } from "@/app/types";
 
 interface SettingsModalProps {
   isOpen?: boolean;
   onClose: () => void;
-  currentUser: User;
+  currentUser: User | null | SafeUser;
 }
 
 const SettingsModal: React.FC<SettingsModalProps> = ({

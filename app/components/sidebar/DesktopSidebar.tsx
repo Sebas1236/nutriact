@@ -9,7 +9,7 @@ import SettingsModal from "./SettingsModal";
 import { User } from "@prisma/client";
 
 interface DesktopSidebarProps {
-  currentUser: User;
+  currentUser: User | null | SafeUser;
 }
 
 const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
