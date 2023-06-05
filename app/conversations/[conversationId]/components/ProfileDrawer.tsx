@@ -180,7 +180,6 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                 hover:opacity-75
                               "
                             >
-                              a
                               <div
                                 className="
                                 w-10
