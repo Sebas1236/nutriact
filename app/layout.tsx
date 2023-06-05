@@ -7,6 +7,7 @@ import ToasterProvider from "./providers/ToasterProvider";
 import LoginModal from "./components/modals/LoginModal";
 import getCurrentUser from "./actions/getCurrentUser";
 import AuthContext from "./context/AuthContext";
+import ActiveStatus from "./components/ActiveStatus";
 
 export const metadata = {
   title: "NutriAct",
@@ -30,6 +31,7 @@ export default async function RootLayout({
         <AuthContext>
           <ClientOnly>
             <ToasterProvider />
+            <ActiveStatus />
             <LoginModal />
             <RegisterModal />
             {/* <Navbar currentUser={currentUser} /> */}
