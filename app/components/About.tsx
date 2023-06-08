@@ -43,7 +43,7 @@ const About = () => {
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
         >
-          <Image src={icon} alt="" />
+          <Image src={icon} alt="about-image" />
           <h2 className="h2 section-title">
             {title} <span className="text-primary-200">.</span>
           </h2>

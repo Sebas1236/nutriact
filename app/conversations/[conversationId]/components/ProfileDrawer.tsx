@@ -10,12 +10,13 @@ import Avatar from "@/app/components/sidebar/Avatar";
 import ConfirmModal from "./ConfirmModal";
 import AvatarGroup from "@/app/components/AvatarGroup";
 import useActiveList from "@/app/hooks/useActiveList";
+import { SafeUser } from "@/app/types";
 
 interface ProfileDrawerProps {
   isOpen: boolean;
   onClose: () => void;
   data: Conversation & {
-    users: User[];
+    users: SafeUser[];
   };
 }
 

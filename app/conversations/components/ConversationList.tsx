@@ -1,7 +1,7 @@
 "use client";
 
 import useConversation from "@/app/hooks/useConversation";
-import { FullConversationType } from "@/app/types";
+import { FullConversationType, SafeUser } from "@/app/types";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -16,7 +16,7 @@ import { find } from "lodash";
 
 interface ConversationListProps {
   initialItems: FullConversationType[];
-  users: User[];
+  users: SafeUser[];
 }
 
 const ConversationList: React.FC<ConversationListProps> = ({

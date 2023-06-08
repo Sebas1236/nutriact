@@ -5,7 +5,7 @@ import UserBox from "./UserBox";
 import { User } from "@prisma/client";
 
 interface UserListProps {
-  items: SafeUser[] | User[];
+  items: SafeUser[];
 }
 
 const UserList: React.FC<UserListProps> = ({ items }) => {

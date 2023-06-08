@@ -10,11 +10,12 @@ import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import Button from "../[conversationId]/components/Button";
+import { SafeUser } from "@/app/types";
 
 interface GroupChatModalProps {
   isOpen: boolean;
   onClose: () => void;
-  users: User[];
+  users: SafeUser[];
 }
 
 const GroupChatModal: React.FC<GroupChatModalProps> = ({

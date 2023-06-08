@@ -8,7 +8,7 @@ const getUsers = async () => {
   }
 
   try {
-    const users = await prisma.user.findMany({
+    let users = await prisma.user.findMany({
       orderBy: {
         name: "asc",
       },
@@ -18,7 +18,21 @@ const getUsers = async () => {
         },
       },
     });
-    return users;
+
+    //create a new array with serialized dates
+    let newUsers = users.map((user) => {
+      return {
+        ...user,
+        createdAt: user.createdAt.toISOString(),
+        updatedAt: user.updatedAt.toISOString(),
+        //check if emailVerified null
+        emailVerified: user.emailVerified
+          ? user.emailVerified.toISOString()
+          : null,
+      };
+    });
+
+    return newUsers;
   } catch (error: any) {
     return [];
   }

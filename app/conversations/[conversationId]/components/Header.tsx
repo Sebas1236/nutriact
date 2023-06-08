@@ -9,10 +9,11 @@ import { HiChevronUp, HiEllipsisHorizontal } from "react-icons/hi2";
 import ProfileDrawer from "./ProfileDrawer";
 import AvatarGroup from "@/app/components/AvatarGroup";
 import useActiveList from "@/app/hooks/useActiveList";
+import { SafeUser } from "@/app/types";
 
 interface HeaderProps {
   conversation: Conversation & {
-    users: User[];
+    users: SafeUser[];
   };
 }
 

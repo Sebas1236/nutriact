@@ -43,7 +43,7 @@ const WorkoutSlider = () => {
             className="max-w-[320px] max-h-[320px] relative bg-purple-200"
             key={idx}
           >
-            <Image className="w-full h-full object-cover" src={image} alt="" />
+            <Image fill src={image} alt="" sizes="w-full h-full" />
             <div className="absolute left-[20px] bottom-[20px] bg-white h-[26px] px-[14px] flex items-center justify-center rounded-[1px]">
               <div className="font-primary font-semibold text-sm text-neutral-500">
                 {name}

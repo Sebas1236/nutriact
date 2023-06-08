@@ -136,7 +136,7 @@ export const community: Community = {
     {
       image: CommunityImg1,
       name: "Mark A.",
-      message: "“Fácil de usar, intuitivo y muy útil. Totalmente reocmendado.”",
+      message: "“Fácil de usar, intuitivo y muy útil. Totalmente recomendado.”",
     },
     {
       image: CommunityImg2,

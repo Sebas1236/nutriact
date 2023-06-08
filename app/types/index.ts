@@ -13,12 +13,24 @@ export type SafeUser = Omit<
   emailVerified: string | null;
 };
 
-export type FullMessageType = Message & {
-  sender: User;
-  seen: User[];
+export type SafeMessage = Omit<Message, "createdAt"> & {
+  createdAt: string;
 };
 
-export type FullConversationType = Conversation & {
-  users: User[];
+export type FullMessageType = SafeMessage & {
+  sender: SafeUser;
+  seen: SafeUser[];
+};
+
+export type SafeConversation = Omit<
+  Conversation,
+  "createdAt" | "lastMessageAt"
+> & {
+  createdAt: string;
+  lastMessageAt: string;
+};
+
+export type FullConversationType = SafeConversation & {
+  users: SafeUser[];
   messages: FullMessageType[];
 };
