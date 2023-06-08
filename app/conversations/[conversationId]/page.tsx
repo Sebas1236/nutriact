@@ -10,9 +10,7 @@ interface IParams {
 }
 
 const ConversationId = async ({ params }: { params: IParams }) => {
-  const conversation = await JSON.parse(
-    JSON.stringify(getConversationById(params.conversationId))
-  );
+  const conversation = await getConversationById(params.conversationId);
   const messages = await getMessages(params.conversationId);
 
   if (!conversation) {

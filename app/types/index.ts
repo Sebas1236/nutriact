@@ -22,6 +22,7 @@ export type FullMessageType = SafeMessage & {
   seen: SafeUser[];
 };
 
+//messages
 export type SafeConversation = Omit<
   Conversation,
   "createdAt" | "lastMessageAt"

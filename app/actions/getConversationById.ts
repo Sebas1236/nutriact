@@ -18,7 +18,27 @@ const getConversationById = async (conversationId: string) => {
       },
     });
 
-    return conversation;
+    if (!conversation) {
+      return null;
+    }
+
+    //serialize dates
+    const newConversation = {
+      ...conversation,
+      createdAt: conversation.createdAt.toISOString(),
+      lastMessageAt: conversation.lastMessageAt.toISOString(),
+
+      users: conversation.users.map((user) => ({
+        ...user,
+        createdAt: user.createdAt.toISOString(),
+        updatedAt: user.updatedAt.toISOString(),
+        emailVerified: user.emailVerified
+          ? user.emailVerified.toISOString()
+          : null,
+      })),
+    };
+
+    return newConversation;
   } catch (error: any) {
     return null;
   }
