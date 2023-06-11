@@ -31,6 +31,7 @@ const UserBox: React.FC<UserBoxProps> = ({ data }) => {
   return (
     <>
       {isLoading && <LoadingModal />}
+      {/* bg-white */}
       <div
         onClick={handleClick}
         className="
@@ -39,7 +40,6 @@ const UserBox: React.FC<UserBoxProps> = ({ data }) => {
       flex
       items-center
       space-x-3
-      bg-white
       p-3
       hover:bg-neutral-100
       rounded-lg

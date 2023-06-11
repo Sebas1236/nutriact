@@ -10,6 +10,7 @@ interface UserListProps {
 
 const UserList: React.FC<UserListProps> = ({ items }) => {
   return (
+    // border-gray-200
     <aside
       className="
       fixed
