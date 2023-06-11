@@ -35,7 +35,12 @@ const Input: React.FC<InputProps> = ({
       <input
         id={id}
         disabled={disabled}
-        {...(type === "email" && register(id, { pattern: /^\S+@\S+$/i }))}
+        {...(type === "email" &&
+          register(id, {
+            pattern:
+              // (Inicia con letra o numero, y tiene el formato obligatorio1@obligatorio2.obligatorio3.opcional)
+              /^[A-Za-z0-9]+[A-Za-z0-9_.]*[@][a-z]+[.][a-z]+([.][a-z]+)?$/,
+          }))}
         {...register(id, { required: "Este campo es obligatorio" })}
         placeholder=" "
         type={type}
