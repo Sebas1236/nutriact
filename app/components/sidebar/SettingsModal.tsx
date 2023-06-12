@@ -55,6 +55,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
       .post("/api/settings", data)
       .then(() => {
         router.refresh();
+        toast.success("Perfil actualizado.");
         onClose();
       })
       .catch(() => toast.error("Algo salió mal"))

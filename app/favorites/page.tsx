@@ -1,8 +1,14 @@
-"use client";
+import ListingCard from "../components/listings/ListingCard";
+import getCurrentUser from "../actions/getCurrentUser";
+import getExercises from "../actions/getExercises";
+import { SafeUser } from "../types";
+import Favorites from "./Favorites";
 
-import { useSession } from "next-auth/react";
+interface FavoritesPageProps {
+  currentUser: SafeUser | null;
+}
 
-const page = () => {
+const FavoritesPage = async () => {
   return (
     <section className="bg-neutral-500 h-[790px]">
       <div className="container mx-auto h-full">
@@ -14,4 +20,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default FavoritesPage;

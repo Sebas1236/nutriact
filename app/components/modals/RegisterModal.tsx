@@ -13,6 +13,7 @@ import { toast } from "react-hot-toast";
 import Button from "../Button";
 import { signIn } from "next-auth/react";
 import useLoginModal from "@/app/hooks/useLoginModal";
+import { metadata } from "../../layout";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -37,10 +38,18 @@ const RegisterModal = () => {
       .post("/api/auth/register", data)
       .then((res) => {
         registerModal.onClose();
-        console.log(res);
+        toast.success("Cuenta creada con éxito.");
       })
       .catch((err) => {
-        toast.error("Algo salió mal.");
+        // toast.success("Cuenta creada con éxito.");
+        //si el error es de tipo 400 es email
+        if (err.response.status === 400) {
+          toast.error("El email ya está en uso.");
+          console.log("el mail ya está en uso");
+        } else {
+          toast.error("Algo salió mal.");
+          console.log("error");
+        }
       })
       .finally(() => {
         setIsLoading(false);

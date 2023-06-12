@@ -91,6 +91,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
+      {/* border-gray-200 */}
       <aside
         className={clsx(
           `
@@ -103,7 +104,6 @@ const ConversationList: React.FC<ConversationListProps> = ({
       lg:block
       overflow-y-auto
       border-r
-      border-gray-200
     `,
           isOpen ? "hidden" : "block w-full left-0"
         )}

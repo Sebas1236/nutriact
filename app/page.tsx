@@ -17,29 +17,6 @@ import Faq from "./components/Faq";
 import Join from "./components/Join";
 import Footer from "./components/Footer";
 
-const getExerciseTargets = async () => {
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": process.env.RAPID_API_KEY as string,
-      "X-RapidAPI-Host": process.env.RAPID_API_HOST as string,
-    },
-  };
-
-  const response = await fetch(
-    "https://exercisedb.p.rapidapi.com/exercises",
-    options
-  );
-
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-
-  const exerciseTargets: ExerciseTarget[] = await response.json();
-
-  return exerciseTargets;
-};
-
 export default async function Home() {
   // const exerciseTargets = await getExerciseTargets();
   // const listings = await getListings();

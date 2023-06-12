@@ -37,11 +37,11 @@ const Form = () => {
   };
 
   return (
+    // bg-white
     <div
       className="
       py-4
       px-4
-      bg-white
       border-t
       flex
       items-center

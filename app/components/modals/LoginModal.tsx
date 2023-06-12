@@ -44,7 +44,9 @@ const LoginModal = () => {
         loginModal.onClose();
       }
       if (callback?.error) {
-        toast.error(callback.error);
+        toast.error("Algo salió mal");
+        // toast.success("Inicio de sesión exitoso.");
+        console.log(callback.error);
       }
     });
   };
