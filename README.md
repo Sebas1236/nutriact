@@ -37,6 +37,33 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## NutriAct 
+## NutriAct
 
 Replace the .env.template variables
+
+## Run as a local database with prisma and mongo
+
+```
+1. Install docker
+2. Create docker-compose.yml in the main directory with the following:
+version: '3.8'
+services:
+
+  database:
+    image: 'bitnami/mongodb:latest'
+    environment:
+      - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_ROOT_USER=anyuser
+      - MONGODB_ROOT_PASSWORD=anypassword
+      - MONGODB_REPLICA_SET_KEY=replicasetkey123
+    ports:
+      - '27017:27017'
+    volumes:
+      - 'mongo-db:/bitnami/mongodb'
+
+volumes:
+  mongo-db:
+3. Run docker-compose up
+4. Create in .env DATABASE_URL=mongodb://<USER>:<PASSWORD>@<OWNIP>:27017/<DBNAME>?authSource=admin&directConnection=true
+```
