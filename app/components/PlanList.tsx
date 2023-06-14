@@ -80,7 +80,7 @@ const PlanList: React.FC<Props> = ({ plans }) => {
                         : "border border-neutral-500"
                     } btn btn-lg rounded-[1px] lg:mx-auto`}
                   >
-                    Join now
+                    Únete ahora
                   </button>
                 </div>
               </div>

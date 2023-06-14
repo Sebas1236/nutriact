@@ -60,8 +60,8 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
             className="
             lg:hidden
             block
-            text-sky-500
-            hover:text-sky-600
+            text-green-500
+            hover:text-green-600
             transition
             cursor-pointer
           "
@@ -89,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         <HiEllipsisHorizontal
           size={32}
           onClick={() => setDrawerOpen(true)}
-          className="text-sky-500 cursor-pointer hover:text-sky-600 transition"
+          className="text-green-500 cursor-pointer hover:text-green-600 transition"
         />
       </div>
     </>

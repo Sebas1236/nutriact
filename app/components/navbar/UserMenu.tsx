@@ -16,9 +16,9 @@ import { signOut } from "next-auth/react";
 import { SafeUser } from "@/app/types";
 import ThemeSelector from "./ThemeSelector";
 import { useRouter } from "next/navigation";
-import { MdOutlineFitnessCenter } from "react-icons/md";
+import { MdAccountCircle, MdOutlineFitnessCenter } from "react-icons/md";
 import { FaTasks } from "react-icons/fa";
-import { BiLogOut } from "react-icons/bi";
+import { BiLogIn, BiLogOut } from "react-icons/bi";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -56,7 +56,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                         hover:bg-neutral-100
                         transition 
                         cursor-pointer
-                        text-sky-500
+                        text-green-500
                     "
         >
           <FiSun />
@@ -126,8 +126,16 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
               </>
             ) : (
               <>
-                <MenuItem onClick={loginModal.onOpen} label="Login" />
-                <MenuItem onClick={registerModal.onOpen} label="Sign up" />
+                <MenuItem
+                  onClick={loginModal.onOpen}
+                  label="Login"
+                  icon={BiLogIn}
+                />
+                <MenuItem
+                  onClick={registerModal.onOpen}
+                  label="Sign up"
+                  icon={MdAccountCircle}
+                />
               </>
             )}
           </div>
