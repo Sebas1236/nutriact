@@ -5,7 +5,9 @@ interface IParams {
 }
 
 export default async function getListingById(params: IParams) {
-  const url = `https://exercisedb.p.rapidapi.com/exercises/exercise/${params.listingId}}`;
+  const { listingId } = params;
+
+  const url = `https://exercisedb.p.rapidapi.com/exercises/exercise/${listingId}`;
   const options = {
     method: "GET",
     headers: {
@@ -26,6 +28,7 @@ export default async function getListingById(params: IParams) {
 
     return exerciseTargets;
   } catch (error: any) {
-    throw new Error(error);
+    console.log(error.message);
+    return null;
   }
 }
