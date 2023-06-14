@@ -1,4 +1,4 @@
-const FavoritesPage = async () => {
+const ExercisesPage = async () => {
   return (
     <section className="bg-neutral-500 h-[790px]">
       <div className="container mx-auto h-full">
@@ -10,4 +10,4 @@ const FavoritesPage = async () => {
   );
 };
 
-export default FavoritesPage;
+export default ExercisesPage;
