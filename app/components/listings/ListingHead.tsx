@@ -20,7 +20,7 @@ const ListingHead: React.FC<ListingHeadProps> = ({
 }) => {
   return (
     <>
-      <Heading title={title} subtitle={`Subtitle...`} />
+      <Heading title={title} subtitle={`Detalles del ejercicio`} />
       <div
         className="
         w-full
@@ -30,12 +30,8 @@ const ListingHead: React.FC<ListingHeadProps> = ({
         relative
     "
       >
-        <Image
-          src={imageSrc}
-          alt={title}
-          fill
-          className="object-cover w-full"
-        />
+        {/* object-cover */}
+        <Image src={imageSrc} alt={title} fill className="w-full" />
         <div className="absolute top-5 right-5">
           <HeartButton listingId={id} currentUser={currentUser} />
         </div>
