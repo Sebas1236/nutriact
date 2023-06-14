@@ -1,6 +1,11 @@
 "use client";
 
-import { AiOutlineMenu } from "react-icons/ai";
+import {
+  AiFillHeart,
+  AiOutlineMenu,
+  AiOutlineMessage,
+  AiOutlineUser,
+} from "react-icons/ai";
 import { FiAirplay, FiMoon, FiSun } from "react-icons/fi";
 import Avatar from "../Avatar";
 import { useCallback, useState } from "react";
@@ -11,6 +16,9 @@ import { signOut } from "next-auth/react";
 import { SafeUser } from "@/app/types";
 import ThemeSelector from "./ThemeSelector";
 import { useRouter } from "next/navigation";
+import { MdOutlineFitnessCenter } from "react-icons/md";
+import { FaTasks } from "react-icons/fa";
+import { BiLogOut } from "react-icons/bi";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -58,7 +66,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         <div
           onClick={toggleOpen}
           className="
-                        p-4
+                        p-8
                         md:py-1
                         md:px-2
                         border-[1px]
@@ -87,21 +95,34 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                 <MenuItem
                   onClick={() => router.push("/profile")}
                   label="Mi perfil"
+                  icon={AiOutlineUser}
+                />
+                <MenuItem
+                  onClick={() => router.push("/exercises")}
+                  label="Ejercicios"
+                  icon={MdOutlineFitnessCenter}
                 />
                 <MenuItem
                   onClick={() => router.push("/routines")}
                   label="Mis rutinas"
+                  icon={FaTasks}
                 />
                 <MenuItem
                   onClick={() => router.push("/favorites")}
                   label="Mis favoritos"
+                  icon={AiFillHeart}
                 />
                 <MenuItem
                   onClick={() => router.push("/users")}
                   label="Mis mensajes"
+                  icon={AiOutlineMessage}
                 />
                 <hr />
-                <MenuItem onClick={() => signOut()} label="Logout" />
+                <MenuItem
+                  onClick={() => signOut()}
+                  label="Logout"
+                  icon={BiLogOut}
+                />
               </>
             ) : (
               <>
