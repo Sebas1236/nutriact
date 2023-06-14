@@ -52,12 +52,49 @@ const ListingCard: React.FC<ListingCardProps> = ({
             <HeartButton listingId={data.id} currentUser={currentUser} />
           </div>
         </div>
-        <div className="font-semibold text-lg">
-          {data.name}, {data.bodyPart}
+        <div
+          className="
+                        flex
+                        justify-between
+                        items-center
+                        w-full
+                        text-sm
+                        text-gray-500
+
+        "
+        >
+          <button
+            className="rounded-lg bg-orange-300
+            hover:bg-orange-400
+            transition
+            duration-300
+            ease-in-out
+            px-1
+            py-1
+            font-semibold
+            text-lg
+          "
+          >
+            {data.bodyPart}
+          </button>
+          <button
+            className="
+          rounded-lg
+          bg-red-300
+          hover:bg-red-400
+          transition
+          duration-300
+          ease-in-out
+          px-2
+          py-1
+          font-semibold 
+          text-lg"
+          >
+            {data.target}
+          </button>
         </div>
-        <div className="font-light text-neutral-500">{data.target}</div>
-        <div className="flex flex-row items-center gap-1">
-          <div className="font-semibold">- {data.equipment}</div>
+        <div className="font-semibold text-lg">
+          {data.name.slice(0, 1).toUpperCase() + data.name.slice(1)}
         </div>
         {/* {
                     onAction && actionLabel && (

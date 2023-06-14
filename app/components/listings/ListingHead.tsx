@@ -20,7 +20,10 @@ const ListingHead: React.FC<ListingHeadProps> = ({
 }) => {
   return (
     <>
-      <Heading title={title} subtitle={`Detalles del ejercicio`} />
+      <Heading
+        title={title.toUpperCase()}
+        subtitle={`Detalles del ejercicio`}
+      />
       <div
         className="
         w-full
