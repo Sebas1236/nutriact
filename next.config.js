@@ -11,6 +11,7 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "d205bpvrqc9yn1.cloudfront.net",
       "edbv2-ff7foj6vca-uc.a.run.app",
+      "127.0.0.1",
     ],
   },
 };

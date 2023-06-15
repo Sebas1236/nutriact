@@ -5,6 +5,7 @@ import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
+import ExerciseDetector from "@/app/components/ml/ExerciseDetector";
 import { categories } from "@/app/components/navbar/Categories";
 import { ExerciseTarget } from "@/app/interfaces";
 import { SafeUser } from "@/app/types";
@@ -59,6 +60,10 @@ const ListingClient: React.FC<ListingClientProps> = ({
                 id={listing.id}
               />
             </div>
+          </div>
+
+          <div className="mt-12">
+            <ExerciseDetector />
           </div>
         </div>
       </Container>
