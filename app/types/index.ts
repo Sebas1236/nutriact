@@ -11,7 +11,6 @@ export type SafeUser = Omit<
   createdAt: string;
   updatedAt: string;
   emailVerified: string | null;
-  type: string;
 };
 
 export type SafeMessage = Omit<Message, "createdAt"> & {
