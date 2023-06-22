@@ -31,6 +31,20 @@ model User {
 
   seenMessageIds String[]  @db.ObjectId
   sendMessages   Message[] @relation("Seen", fields: [seenMessageIds], references: [id])
+
+  foodIds         String[]       @db.ObjectId
+  foods           Food[] @relation(fields: [foodIds], references: [id])
+}
+
+model Food {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  name          String?
+  instructions  String?
+  ingredients    String?
+  hour          String?
+
+  userIds String[] @db.ObjectId
+  users   User[]   @relation(fields: [userIds], references: [id])  
 }
 
 model Conversation {

@@ -23,7 +23,7 @@ export default async function getCurrentUser() {
 
         return {
             ...currentUser,
-            // roles: currentUser.roles.map((role) => role.name),
+            //roles: currentUser.role.map((role) => role.name),
             createdAt: currentUser.createdAt.toISOString(),
             updatedAt: currentUser.updatedAt.toISOString(),
             emailVerified: currentUser.emailVerified?.toISOString() || null,

@@ -117,6 +117,16 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   label="Mis mensajes"
                   icon={AiOutlineMessage}
                 />
+
+                {/* Area de prueba del nutriolgo Retirar cuado funcione el ingreso por rol*/}
+                
+                <MenuItem
+                  onClick={() => router.push("/nutritionist")}
+                  label="Nutriologo"
+                  icon={FaTasks}
+                />
+                 {/*Fin del area de prueba */}
+                
                 <hr />
                 <MenuItem
                   onClick={() => signOut()}
