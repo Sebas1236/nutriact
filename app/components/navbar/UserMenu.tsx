@@ -90,11 +90,38 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
       {isOpen && (
         <div className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
-            {currentUser ? (
+            {currentUser === null ? (
+                <>
+                  <MenuItem
+                    onClick={loginModal.onOpen}
+                    label="Login"
+                    icon={BiLogIn}
+                  />
+                  <MenuItem
+                    onClick={registerModal.onOpen}
+                    label="Sign up"
+                    icon={MdAccountCircle}
+                  />
+                </>
+              ) : currentUser?.type === 'nutriologo' ? (
+                <>
+                  <MenuItem
+                    onClick={() => router.push("/nutriologo")}
+                    label="Asignar dieta"
+                    icon={AiOutlineMessage}
+                  />
+                  <hr />
+                  <MenuItem
+                    onClick={() => signOut()}
+                    label="Logout"
+                    icon={BiLogOut}
+                  />
+                </>
+              ) : (
               <>
                 <MenuItem
                   onClick={() => router.push("/profile")}
-                  label="Mi perfil"
+                  label={"Mi perfil" + '>' +currentUser?.type }
                   icon={AiOutlineUser}
                 />
                 <MenuItem
@@ -122,19 +149,6 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   onClick={() => signOut()}
                   label="Logout"
                   icon={BiLogOut}
-                />
-              </>
-            ) : (
-              <>
-                <MenuItem
-                  onClick={loginModal.onOpen}
-                  label="Login"
-                  icon={BiLogIn}
-                />
-                <MenuItem
-                  onClick={registerModal.onOpen}
-                  label="Sign up"
-                  icon={MdAccountCircle}
                 />
               </>
             )}

@@ -6,11 +6,12 @@ export type SafeListing = Omit<Listing, "createdAt"> & {
 
 export type SafeUser = Omit<
   User,
-  "createdAt" | "updatedAt" | "emailVerified"
+  "createdAt" | "updatedAt" | "emailVerified" | "type"
 > & {
   createdAt: string;
   updatedAt: string;
   emailVerified: string | null;
+  type: string;
 };
 
 export type SafeMessage = Omit<Message, "createdAt"> & {

@@ -21,6 +21,7 @@ model User {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
   favoriteIds    String[]
+  type           String?
 
   accounts Account[]
   listings Listing[]
