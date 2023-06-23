@@ -113,8 +113,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   icon={MdOutlineFitnessCenter}
                 />
                 <MenuItem
-                  onClick={() => router.push("/routines")}
-                  label="Mis rutinas"
+                  onClick={() => router.push("/foods")}
+                  label="Mi alimentación"
                   icon={FaTasks}
                 />
                 <MenuItem
@@ -157,15 +157,6 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   label="Mis mensajes"
                   icon={AiOutlineMessage}
                 />
-
-                {/* Area de prueba del nutriolgo Retirar cuado funcione el ingreso por rol*/}
-                
-                <MenuItem
-                  onClick={() => router.push("/nutritionist")}
-                  label="Nutriologo"
-                  icon={FaTasks}
-                />
-                 {/*Fin del area de prueba */}
                 
                  <MenuItem
                   onClick={AddFoodModal.onOpen}

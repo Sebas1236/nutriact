@@ -53,6 +53,12 @@ const AddFoodModal = () => {
         addFoodModal.onClose();
         toast.success("Receta creada con éxito.");
       })
+      axios
+      .post("/api/food", data)
+      .then((res) => {
+        addFoodModal.onClose();
+        toast.success("Receta creada con éxito.");
+      })
       .catch((err) => {
         // toast.success("Cuenta creada con éxito.");
         //si el error es de tipo 400 es email

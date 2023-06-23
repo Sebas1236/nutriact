@@ -6,3 +6,11 @@ export interface ExerciseTarget {
     name: "string";
     target: "string";
 };
+
+export interface FoodTarget {
+    id: "string";
+    name: "string";
+    instructions: "string";
+    calories: "string";
+    ingredients: "string";
+  }

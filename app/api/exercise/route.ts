@@ -13,4 +13,5 @@ axios.request(options).then(function (response: any) {
 	return response.data;
 }).catch(function (error: any) {
 	console.error(error);
+  console.log("Error en route")
 });
