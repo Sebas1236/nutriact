@@ -9,8 +9,13 @@ import Input from "../inputs/Input";
 import { toast } from "react-hot-toast";
 import useFoodAddModal from "@/app/hooks/useAddFoodModal";
 import { useRouter } from "next/navigation";
+import { CldUploadButton } from "next-cloudinary";
+import Button from "@/app/conversations/[conversationId]/components/Button";
+import Image from "next/image";
 
 const AddFoodModal = () => {
+ 
+
   const router = useRouter();
   const addFoodModal = useFoodAddModal();
   const [isLoading, setIsLoading] = useState(false);
@@ -18,6 +23,8 @@ const AddFoodModal = () => {
   const {
     register,
     handleSubmit,
+    watch,
+    setValue,
     formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
@@ -29,6 +36,14 @@ const AddFoodModal = () => {
       image: ""
     },
   });
+
+  const image = watch("image");
+
+  const handleUpload = (result: any) => {
+    setValue("image", result?.info?.secure_url, {
+      shouldValidate: true,
+    });
+  };
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
@@ -98,15 +113,27 @@ const AddFoodModal = () => {
         errors={errors}
         required
       />
-      <Input
-        id="image"
-        label="Imagen"
-        disabled={isLoading}
-        register={register}
-        errors={errors}
-        required
-      />
-      
+
+          <Image
+            width="48"
+            height="48"
+            className="rounded-full"
+            src={
+              image || "/images/placeholderFood.jpg"
+            }
+            alt="Avatar"
+          />
+
+          <CldUploadButton
+          options={{ maxFiles: 1 }}
+          onUpload={handleUpload}
+          uploadPreset="u2ohm0qd"
+        >
+          <Button disabled={isLoading} secondary type="button">
+            {image ? "Cambiar" : "Subir"}
+          </Button>
+        </CldUploadButton>
+
     </div>
   );
 
