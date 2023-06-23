@@ -44,6 +44,8 @@ model Food {
   instructions  String?
   ingredients    String?
   hour          String?
+  calories      String?
+  image         String?
 
   userIds String[] @db.ObjectId
   users   User[]   @relation(fields: [userIds], references: [id])  

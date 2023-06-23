@@ -1,18 +1,13 @@
 "use client";
 
 import axios from "axios";
-import { AiFillGithub } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Modal from "./Modal";
 import Heading from "../Heading";
 import Input from "../inputs/Input";
 import { toast } from "react-hot-toast";
-import Button from "../Button";
-import { signIn } from "next-auth/react";
 import useFoodAddModal from "@/app/hooks/useAddFoodModal";
-import { metadata } from "../../layout";
 import { useRouter } from "next/navigation";
 
 const AddFoodModal = () => {
@@ -38,17 +33,17 @@ const AddFoodModal = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     axios
-      .post("/api/auth/register", data)
+      .post("/api/food", data)
       .then((res) => {
         addFoodModal.onClose();
-        toast.success("Cuenta creada con éxito.");
+        toast.success("Receta creada con éxito.");
       })
       .catch((err) => {
         // toast.success("Cuenta creada con éxito.");
         //si el error es de tipo 400 es email
         if (err.response.status === 400) {
-          toast.error("El email ya está en uso.");
-          console.log("el mail ya está en uso");
+          toast.error("Error en la creacion de receta");
+          console.log("Error en la creacion de receta");
         } else {
           toast.error("Algo salió mal.");
           console.log("error");
