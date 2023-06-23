@@ -92,7 +92,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
       {isOpen && (
         <div className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
-            {currentUser ? (
+            {currentUser?.role=="client" ? (       
               <>
                 <MenuItem
                   onClick={() => router.push("/profile")}
@@ -113,6 +113,32 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   onClick={() => router.push("/favorites")}
                   label="Mis favoritos"
                   icon={AiFillHeart}
+                />
+                <MenuItem
+                  onClick={() => router.push("/users")}
+                  label="Mis mensajes"
+                  icon={AiOutlineMessage}
+                />
+                
+                <hr />
+                <MenuItem
+                  onClick={() => signOut()}
+                  label="Logout"
+                  icon={BiLogOut}
+                />
+              </>
+            ) : currentUser?.role=="nutritionist" ? (
+              <>
+                  <>
+                <MenuItem
+                  onClick={() => router.push("/profile")}
+                  label="Mi perfil"
+                  icon={AiOutlineUser}
+                />
+                <MenuItem
+                  onClick={() => router.push("/exercises")}
+                  label="Ejercicios"
+                  icon={MdOutlineFitnessCenter}
                 />
                 <MenuItem
                   onClick={() => router.push("/users")}
@@ -143,19 +169,20 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   icon={BiLogOut}
                 />
               </>
+              </>
             ) : (
               <>
-                <MenuItem
-                  onClick={loginModal.onOpen}
-                  label="Login"
-                  icon={BiLogIn}
-                />
-                <MenuItem
-                  onClick={registerModal.onOpen}
-                  label="Sign up"
-                  icon={MdAccountCircle}
-                />
-              </>
+              <MenuItem
+                onClick={loginModal.onOpen}
+                label="Login"
+                icon={BiLogIn}
+              />
+              <MenuItem
+                onClick={registerModal.onOpen}
+                label="Sign up"
+                icon={MdAccountCircle}
+              />
+            </>
             )}
           </div>
         </div>
