@@ -1,5 +1,5 @@
 
-import { NutritionistTarget} from "../interfaces";
+import { NutritionistTarget} from "../interfaces/nutrionist-target";
 import { SafeUser } from "../types";
 
 interface NutritionistProps {
@@ -9,9 +9,8 @@ interface NutritionistProps {
 
 const Nutrionist: React.FC<NutritionistProps> = ({
   currentUser,
-  nutrionist,
 }) => {
-  return (
+  return ( null
     
   );
 };

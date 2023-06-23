@@ -4,6 +4,7 @@ const FavoritesPage = async () => {
       <div className="container mx-auto h-full">
         <div className="flex items-center h-full relative -space-x-48 lg:-space-x-24">
           <div className="text-white flex-1 z-10 pl-6 lg:pl-0"></div>
+          <h1>HOLAAAA</h1>
         </div>
       </div>
     </section>
