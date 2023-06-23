@@ -6,6 +6,7 @@ import {
   AiOutlineMessage,
   AiOutlineUser,
 } from "react-icons/ai";
+import SettingsModal from "../sidebar/SettingsModal";
 import { FiAirplay, FiMoon, FiSun } from "react-icons/fi";
 import Avatar from "../Avatar";
 import { useCallback, useState } from "react";
@@ -32,6 +33,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const AddFoodModal = useAddFoodModal();
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
 
   const [modeIsOpen, setModeIsOpen] = useState(false);
 
@@ -41,7 +43,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   );
 
   const toggleOpen = useCallback(() => setIsOpen(!isOpen), [isOpen]);
-
+  const toggleOpen2 = useCallback(() => setIsOpen2(!isOpen2), [isOpen2]);
+  
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
@@ -94,8 +97,13 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           <div className="flex flex-col cursor-pointer">
             {currentUser?.role=="client" ? (       
               <>
+              <SettingsModal
+                currentUser={currentUser}
+                isOpen={isOpen2}
+                onClose={() => setIsOpen2(false)}
+              />
                 <MenuItem
-                  onClick={() => router.push("/profile")}
+                  onClick={() => setIsOpen2(!isOpen2)}
                   label="Mi perfil"
                   icon={AiOutlineUser}
                 />
@@ -119,7 +127,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   label="Mis mensajes"
                   icon={AiOutlineMessage}
                 />
-                
+
                 <hr />
                 <MenuItem
                   onClick={() => signOut()}
@@ -129,9 +137,13 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
               </>
             ) : currentUser?.role=="nutritionist" ? (
               <>
-                  <>
+                  <SettingsModal
+                currentUser={currentUser}
+                isOpen={isOpen2}
+                onClose={() => setIsOpen2(false)}
+              />
                 <MenuItem
-                  onClick={() => router.push("/profile")}
+                  onClick={() => setIsOpen2(!isOpen2)}
                   label="Mi perfil"
                   icon={AiOutlineUser}
                 />
@@ -168,7 +180,6 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   label="Logout"
                   icon={BiLogOut}
                 />
-              </>
               </>
             ) : (
               <>
