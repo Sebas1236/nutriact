@@ -4,6 +4,7 @@ import prisma from "@/app/libs/prismadb";
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import EmailProvider from "next-auth/providers/email";
 import bcrypt from 'bcrypt';
 
 export const authOptions: AuthOptions = {
@@ -46,7 +47,11 @@ export const authOptions: AuthOptions = {
                 
                 return user;
             }
-        })
+        }),
+        EmailProvider({
+            server: process.env.EMAIL_SERVER,
+            from: process.env.EMAIL_FROM
+        }),
     ],
     pages: {
         signIn: '/',
