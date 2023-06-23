@@ -19,6 +19,7 @@ import { useRouter } from "next/navigation";
 import { MdAccountCircle, MdOutlineFitnessCenter } from "react-icons/md";
 import { FaTasks } from "react-icons/fa";
 import { BiLogIn, BiLogOut } from "react-icons/bi";
+import useAddFoodModal from "@/app/hooks/useAddFoodModal";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -28,6 +29,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const router = useRouter();
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+  const AddFoodModal = useAddFoodModal();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -127,6 +129,13 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                 />
                  {/*Fin del area de prueba */}
                 
+                 <MenuItem
+                  onClick={AddFoodModal.onOpen}
+                  label="Agregar receta"
+                  icon={BiLogIn}
+                />
+
+
                 <hr />
                 <MenuItem
                   onClick={() => signOut()}

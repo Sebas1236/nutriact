@@ -5,6 +5,7 @@ import "./globals.css";
 import { Nunito } from "next/font/google";
 import ToasterProvider from "./providers/ToasterProvider";
 import LoginModal from "./components/modals/LoginModal";
+import AddFoodModal from "./components/modals/AddFoodModal";
 import getCurrentUser from "./actions/getCurrentUser";
 import AuthContext from "./context/AuthContext";
 import ActiveStatus from "./components/ActiveStatus";
@@ -33,6 +34,7 @@ export default async function RootLayout({
             <ToasterProvider />
             <ActiveStatus />
             <LoginModal />
+            <AddFoodModal/>
             <RegisterModal />
             {/* <Navbar currentUser={currentUser} /> */}
           </ClientOnly>
