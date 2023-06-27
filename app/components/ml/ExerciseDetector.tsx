@@ -36,7 +36,7 @@ const ExerciseDetector = () => {
           alt="Rutina 1"
           src={`http://127.0.0.1:5000/video_feed/${src}`}
           className="video"
-          width={400}
+          width={900}
           height={400}
         />
         <br></br>

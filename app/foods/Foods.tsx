@@ -28,7 +28,7 @@ const Foods: React.FC<FoodsPageProps> = ({ currentUser, favorites }) => {
                 <Image
                   fill
                   alt="Food Image"
-                  src={"/images/Homelet.jpg"}
+                  src={listing?.image || "/images/Homelet.jpg"}
                   className="
                                 object-cover
                                 h-full
